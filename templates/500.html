@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}500 — Erro interno do servidor{% endblock %}
+
+{% block estilos %}
+<style>
+  section {
+    text-align: center;
+    padding: 40px 10px;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  p {
+    max-width: 700px;
+    margin: 12px auto 20px;
+    color: #444;
+  }
+  .actions {
+    margin-top: 18px;
+  }
+  .actions a {
+    margin: 0 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    font-size: 1rem;
+  }
+  .info {
+    margin-top: 22px;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  .user-info {
+    margin-top: 18px;
+    color: #444;
+    font-size: 0.9rem;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<section>
+  <h1>500</h1>
+  <h2>Erro interno do servidor</h2>
+  <p>
+    Oops — algo deu errado no servidor. Já detectamos a falha e estamos trabalhando para corrigir.
+    Tente novamente em alguns instantes.
+  </p>
+
+  <div class="actions">
+    <a href="{{ url_for('index') }}">Ir para a página inicial</a>
+    <a href="{{ url_for('projetos') }}">Ver projetos</a>
+  </div>
+
+  <p class="info">
+    Se você é o desenvolvedor: verifique os logs do servidor para ver a exceção. Se for usuário, <a href="{{ url_for('sobre') }}">nos informe</a> com os detalhes (página que acessou, ação realizada).
+  </p>
+
+  {% if current_user.is_authenticated %}
+    <div class="user-info">
+      <strong>Usuário logado:</strong> {{ current_user.nome }}
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Projetos Cadastrados{% endblock %}
+
+{% block content %}
+
+<h2>Meus Projetos</h2>
+
+{% if projetos %}
+    <ul>
+    {% for projeto in projetos %}
+        <li>
+            <strong>{{ projeto['titulo'] }}</strong> - {{ projeto['descricao'] }}
+
+            <a href="{{ url_for('editar_projeto', id=projeto['id']) }}">Editar</a>
+            <a href="{{ url_for('excluir_projeto', id=projeto['id']) }}">Excluir</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Você ainda não cadastrou nenhum projeto.</p>
+{% endif %}
+
+{% endblock %}

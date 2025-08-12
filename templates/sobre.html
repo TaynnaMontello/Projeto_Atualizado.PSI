@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Sobre o Projeto{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="conteudoprincipal">
+    <h1>Sobre o Projeto</h1>
+    <p>Este site é uma versão extremamente simplificada da nossa ideia principal de projeto: IFNexus.</p>
+    <p>Foi desenvolvido por:</p>
+    <ul style="list-style: none; padding: 0; margin-top: 20px;">
+        <li>👤 Marcos Cassiano</li>
+        <li>👤 Taynná Montell</li>
+        <li>👤 Ludimila Erika</li>
+        <li>👤 Kessya Cauanny</li>
+        <li>👤 Alex Bruno</li>
+    </ul>
+    <p style="margin-top: 30px;">
+        Caso deseje acompanhar o nosso projeto real (nosso Projeto de Conclusão de Curso), acesse o link abaixo:
+    </p>
+    <a href="https://github.com/marcoscassian/ifnexus" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #006905; color: white; text-decoration: none; border-radius: 5px;">
+        Acessar o Projeto no GitHub
+    </a>
+</div>
+{% endblock %}
