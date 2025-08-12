@@ -1,0 +1,59 @@
+h2 {
+  text-align: center;
+  color: #006905;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.form-cadastro {
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+}
+
+.form-cadastro label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-cadastro input[type="text"],
+.form-cadastro textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 16px;
+}
+
+.form-cadastro button[type="submit"] {
+  background-color: #006905;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-cadastro button[type="submit"]:hover {
+  background-color: #004e03;
+}
+
+ul {
+  max-width: 500px;
+  margin: 15px auto;
+  padding: 0;
+  list-style: none;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
