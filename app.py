@@ -44,11 +44,12 @@ def lembrar_usuario():
 
 @app.route('/cadastrar_pessoa', methods=['GET', 'POST'])
 def cadastrar_pessoa():
+
     if request.method == 'POST':
         nome = request.form['nome'].strip()
         email = request.form['email'].strip()
         senha = request.form['senha'].strip()
-
+    
         if not nome or not email or not senha:
             flash('Preencha todos os campos.')
             return redirect(url_for('cadastrar_pessoa'))
@@ -57,11 +58,17 @@ def cadastrar_pessoa():
         cursor = conn.cursor()
 
         cursor.execute('SELECT * FROM usuarios WHERE email = ?', (email,))
-        usuario_existente = cursor.fetchone()
-
-        if usuario_existente:
+        usuario_existente_email = cursor.fetchone()
+        if usuario_existente_email:
             conn.close()
             flash('Este e-mail já está cadastrado.')
+            return redirect(url_for('cadastrar_pessoa'))
+
+        cursor.execute('SELECT * FROM usuarios WHERE nome = ?', (nome,))
+        usuario_existente_nome = cursor.fetchone()
+        if usuario_existente_nome:
+            conn.close()
+            flash('Este nome já está cadastrado. Escolha outro.')
             return redirect(url_for('cadastrar_pessoa'))
 
         senha_hash = generate_password_hash(senha)
