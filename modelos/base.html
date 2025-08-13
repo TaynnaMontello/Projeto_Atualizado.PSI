@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema de Projetos{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    {% block estilos %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    </head>
+<body>
+    <header>
+        <a href="{{ url_for('index') }}"><h1>Sistema de Projetos IF</h1></a>
+        <nav>
+            <!-- Se o usuário estiver logado, mostra links especiais -->
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('meus_projetos') }}">Meus projetos</a>
+                <a href="{{ url_for('cadastrar_projeto') }}">Novo Projeto</a>
+                <a href="{{ url_for('logout') }}">Sair ({{ current_user.nome }})</a>
+            {% else %}
+            <!-- Se o usuário não estiver logado, mostra Login/Cadastro -->
+                {% if request.endpoint != 'login' and request.endpoint != 'cadastrar_pessoa' %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                    <a href="{{ url_for('cadastrar_pessoa') }}">Cadastrar</a>
+                {% elif request.endpoint == 'cadastrar_pessoa' %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                {% endif %}
+            {% endif %}
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

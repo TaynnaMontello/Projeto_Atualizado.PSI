@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="conteudoprincipal">
+    <h1>Vitrine de Projetos Acadêmicos</h1>
+    <p>Bem-vindo! Aqui você encontra os projetos desenvolvidos pelos alunos de todos os IFs.</p>
+    <div class="botoes">
+        <a href="/sobre">Sobre</a>
+        <a href="/projetos">Projetos</a>
+    </div>
+</div>
+{% endblock %}
