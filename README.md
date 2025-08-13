@@ -1,6 +1,6 @@
 ## 🗂️ Estrutura do Projeto — Matéria de PSI
 
-📁 Vitrine de Projetos Acadêmicos/ ← Pasta principal do projeto  
+📁 Sistemas de Projetos IF/        ← Pasta principal do projeto  
 ├── 📁 ambiente/                   ← Ambiente virtual 
 ├── 📁 static/                     ← Arquivos estáticos (CSS, imagens, etc.)  
 │   └── 📄 base.css                ← Arquivo principal de estilos  
