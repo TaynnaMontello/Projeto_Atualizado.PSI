@@ -191,9 +191,18 @@ def editar_projeto(id):
 
 @app.route('/excluir_projeto', methods=['POST'])
 @login_required
-def excluir_projeto(id):
-    pass
+def excluir_projeto():
+    projeto_id = request.form.get("id") 
+    
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
+    cursor.execute("DELETE FROM projetos WHERE id = ?", (projeto_id,))
+    conn.commit()
+    conn.close()
+
+    flash("Projeto excluído com sucesso!")
+    return redirect(url_for("meus_projetos"))
 
 @app.route('/sobre')
 def sobre():
