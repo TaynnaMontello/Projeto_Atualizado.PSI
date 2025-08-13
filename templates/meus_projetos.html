@@ -13,7 +13,13 @@
             <strong>{{ projeto['titulo'] }}</strong> - {{ projeto['descricao'] }}
 
             <a href="{{ url_for('editar_projeto', id=projeto['id']) }}">Editar</a>
-            <a href="{{ url_for('excluir_projeto', id=projeto['id']) }}">Excluir</a>
+            <form action="{{ url_for('excluir_projeto') }}" method="POST" style="display:inline;">
+                <input type="hidden" name="id" value="{{ projeto['id'] }}">
+                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">
+                    Excluir
+                </button>
+            </form>
+            
         </li>
     {% endfor %}
     </ul>
