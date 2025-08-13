@@ -1,7 +1,7 @@
 drop table if exists usuarios;
 drop table if exists projetos;
 
-create table banco (
+create table usuarios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
