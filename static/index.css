@@ -1,0 +1,43 @@
+.conteudoprincipal {
+    max-width: 700px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 40px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.conteudoprincipal h1 {
+    font-size: 2.5em;
+    color: #006905;
+    margin-bottom: 20px;
+}
+
+.conteudoprincipal p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.botoes a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.botoes a:first-child {
+    background-color: #eeeeee;
+    color: #333;
+}
+
+.botoes a:last-child {
+    background-color: #006905;
+    color: white;
+}
+
+.botoes a:hover {
+    opacity: 0.85;
+}
